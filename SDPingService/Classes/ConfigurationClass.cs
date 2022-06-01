@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SDPingService.Classes
 {
     [Serializable]
-    internal class ConfigurationClass
+    public class ConfigurationClass
     {
         public uint max;
         public float timer;
