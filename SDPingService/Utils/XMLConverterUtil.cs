@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace SDPingService.Utils
 {
-    class XMLConverterUtil
+    internal class XMLConverterUtil
     {
         public static string Serialize(object dataToSerialize)
         {
