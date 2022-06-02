@@ -1,8 +1,8 @@
 ﻿namespace SDPingService.Types
 {
-    internal enum EResponseType
+    public enum EResponseType
     {
-        success,
-        error
+        Success,
+        Error
     }
 }

@@ -30,9 +30,13 @@ namespace SDPingService.Modules
             Console.WriteLine("Конфигурация не обнаружена - Создаю новую конфигурацию");
             ConfigurationClass confClass = new ConfigurationClass
             {
+                SMTPserver = "smtp.yandex.ru",
+                SMTPport = 587,
+                SMTPlogin = "login",
+                SMTPpassword = "password",
+                SMTPfromMail = "login@yandex.ru",
+                SMTPtoMail = "login@gmail.com",
                 directory = @"",
-                max = 1000,
-                timer = 5f,
                 postgresConnections = new List<string> { "Server=127.0.0.1;Port=5432;Database=postgres;UID=postgres;PWD=--123--123--" },
                 websitesLinks = new List<string> { "ya.ru" }
             };

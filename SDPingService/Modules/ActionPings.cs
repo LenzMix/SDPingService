@@ -14,6 +14,7 @@ namespace SDPingService.Modules
             try
             {
                 System.Net.NetworkInformation.PingReply pingReply = ping.Send(link);
+                //return new WebsitePingInformation(link, pingReply.RoundtripTime, pingReply.Status);
                 return new WebsitePingInformation
                 {
                     target = link,
@@ -23,6 +24,7 @@ namespace SDPingService.Modules
             }
             catch
             {
+                //return new WebsitePingInformation(link, 999, IPStatus.Unknown);
                 return new WebsitePingInformation
                 {
                     target = link,
@@ -41,20 +43,22 @@ namespace SDPingService.Modules
                 npgSqlConnection.Open();
                 string host = npgSqlConnection.Host;
                 int port = npgSqlConnection.Port;
+                //return new PostgresPingInformation($"{host}:{port}", 0, EResponseType.success);
                 return new PostgresPingInformation
                 {
                     target = $"{host}:{port}",
                     ping = 0,
-                    status = EResponseType.success
+                    status = EResponseType.Success
                 };
             }
             catch
             {
+                //return new PostgresPingInformation($"Нет данных", 0, EResponseType.error);
                 return new PostgresPingInformation
                 {
                     target = $"Нет данных",
                     ping = 0,
-                    status = EResponseType.error
+                    status = EResponseType.Error
                 };
             }
         }

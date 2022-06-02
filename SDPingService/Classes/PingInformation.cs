@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 namespace SDPingService.Classes
 {
     [Serializable]
-    public class PingInformation
+    public abstract class PingInformation
     {
         /*public PingInformation(string target, long ping)
         {
@@ -34,7 +34,7 @@ namespace SDPingService.Classes
     public class PostgresPingInformation : PingInformation
     {
         [XmlAttribute]
-        internal EResponseType status { get; set; }
+        public EResponseType status { get; set; }
         /*internal PostgresPingInformation(string target, long ping, EResponseType status) : base(target, ping)
         {
             this.status = status;
